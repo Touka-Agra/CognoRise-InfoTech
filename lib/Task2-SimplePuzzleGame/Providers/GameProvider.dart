@@ -59,7 +59,7 @@ class GameProvider extends ChangeNotifier {
                 ), idx: counter));
             counter++;
           }
-        }][;pllllllll]
+        }
               notifyListeners();
       }
     }catch(e){
