@@ -4,7 +4,12 @@ import 'package:provider/provider.dart';
 import 'Task1-Calculator/Classes/Theme.dart';
 import 'Task1-Calculator/Providers/ScreenProvider.dart';
 import 'Task1-Calculator/Providers/ThemeProvider.dart';
+import 'Task2-SimplePuzzleGame/Providers/GameProvider.dart';
+import 'Task2-SimplePuzzleGame/Providers/HelpProvider.dart';
+
 import 'Task1-Calculator/Screens/Calculator.dart';
+import 'Task2-SimplePuzzleGame/Screens/GameSplash.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -18,8 +23,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        //Calculator
         ChangeNotifierProvider(create: (_)=>ThemeProvider()),
         ChangeNotifierProvider(create: (_)=>ScreenProvider()),
+
+        //Game
+        ChangeNotifierProvider(create: (_)=>GameProvider()),
+        ChangeNotifierProvider(create: (_)=>HelpProvider()),
 
       ],
       child: Consumer<ThemeProvider>(
@@ -28,7 +38,10 @@ class MyApp extends StatelessWidget {
                 title: 'Flutter Demo',
                 debugShowCheckedModeBanner: false,
                 theme: themeProvider.isLight?lightTheme:darkTheme,
-                home: Calculator()
+
+                //Calcultor=> Calculator()
+                //Sliding Game=>GameSplash()
+                home: GameSplash()
             );
           }
       ),
