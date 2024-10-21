@@ -1,3 +1,9 @@
+import 'package:cognorise_infotech/Task3-BMICalculator/Screens/BMISplash.dart';
+
+import 'Task3-BMICalculator/Providers/AgeProvider.dart';
+import 'Task3-BMICalculator/Providers/GenderProvider.dart';
+import 'Task3-BMICalculator/Providers/HeightProvider.dart';
+import 'Task3-BMICalculator/Providers/WeightProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -31,6 +37,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_)=>GameProvider()),
         ChangeNotifierProvider(create: (_)=>HelpProvider()),
 
+        //BMI
+        ChangeNotifierProvider(create: (_)=>GenderProvider()),
+        ChangeNotifierProvider(create: (_)=>AgeProvider()),
+        ChangeNotifierProvider(create: (_)=>HeightProvider()),
+        ChangeNotifierProvider(create: (_)=>WeightProvider()),
+
       ],
       child: Consumer<ThemeProvider>(
           builder:(context , themeProvider , child){
@@ -41,7 +53,8 @@ class MyApp extends StatelessWidget {
 
                 //Calcultor=> Calculator()
                 //Sliding Game=>GameSplash()
-                home: GameSplash()
+                //BMI =>BMISplash()
+                home: BMISplash()
             );
           }
       ),

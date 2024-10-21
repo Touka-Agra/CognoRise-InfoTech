@@ -37,10 +37,16 @@ dependencies:
   cupertino_icons: ^1.0.8
   provider:
   math_expressions:
+
   image:
   collection:
   lottie:
   http:
+
+  syncfusion_flutter_gauges: ^27.1.53
+  slider_button: ^2.1.0
+
+
 
 dev_dependencies:
   flutter_test:
